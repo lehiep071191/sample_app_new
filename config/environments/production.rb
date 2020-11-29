@@ -111,7 +111,7 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'https://protected-lowlands-51315.herokuapp.com/'
+  host = 'https://lehiep-sample-app.herokuapp.com/'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
   :address => 'smtp.sendgrid.net',
@@ -122,4 +122,8 @@ Rails.application.configure do
   :domain => 'heroku.com',
   :enable_starttls_auto => true
   }
+  config.action_cable.url = "wss://lehiep-sample-app.herokuapp.com/cable" 
+  config.action_cable.allowed_request_origins = ['https://lehiep-sample-app.herokuapp.com', 'http://lehiep-sample-app.herokuapp.com']
+  config.serve_static_assets = true
+
 end
