@@ -6,10 +6,28 @@
 		<%= image_tag micropost.display_image if micropost.image.attached? %>	
 	</span>
 	<span class="timestamp">
-	Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-	<% if current_user.current_user?(micropost.user) %>
-	<%= link_to "delete", micropost, method: :delete,
-	data: { confirm: "You sure?" }, remote: true %>
-	<% end %>
+		Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+		<% if current_user.current_user?(micropost.user) %>
+		<%= link_to "delete", micropost, method: :delete,
+		data: { confirm: "You sure?" }, remote: true %>
+		<% end %>
+	</span>
+	<center><h3>Comment</h3></center>
+	<span id = "append-comment<%= micropost.id %>">
+		<% micropost.comments.each do |comment| %>
+			<p style = "padding-left:50px">
+				<b><%= comment.user.name%>:</b>
+				<%= comment.content %>
+			</p>
+		<% end %>
+	</span>
+	<span>
+		<input type = "text" name = "comment[content]" class = "form-control" id = "comment-content<%= micropost.id %>">
+		<input type = "hidden" name = "comment[user]" class = "form-control" id = "comment-user<%= micropost.id %>" value = "<%= current_user.id %>">
+		<button class = "btn-primary post-comment" data-id = "<%= micropost.id %>"> Comment</button>
 	</span>
 </li>
+
+<script type="text/javascript">
+
+</script>
