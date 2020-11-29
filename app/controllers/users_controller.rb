@@ -29,7 +29,19 @@ class UsersController < ApplicationController
       flash[:success] = "account updated!"
       redirect_to @user
     end  
-  end  
+  end 
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+    end 
   private 
   def user_params
   	params.require(:user).permit(:name, :email, :password, :password_confirmation)
