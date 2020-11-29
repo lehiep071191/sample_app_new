@@ -11,7 +11,8 @@ $(document).on('turbolinks:load', function(){
 				micropost_id: micropost_id
 			},
 			success: function(data){
-				$('#append-comment'+micropost_id).append(data.data_comment);
+				// $('#append-comment'+micropost_id).append(data.data_comment);
+				$('#comment-content'+micropost_id).val("");
 			}
 		})
 	})
