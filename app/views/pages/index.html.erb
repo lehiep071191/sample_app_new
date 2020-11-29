@@ -12,13 +12,13 @@
 			</section>
 		</aside>
 		<div class="col-md-8">
-		<h3>Micropost Feed</h3>
+		<h3>New Feed</h3>
 		<%= render 'shared/feed' %>
 	</div>
 	</div>
 <% else %>
 <div class="center jumbotron">
-	<h1>Welcome to the Sample App</h1>
+	<h1>Welcome to the My App</h1>
 	<h2>
 	This is the home page for the
 	<a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
@@ -29,3 +29,12 @@
 <%= link_to image_tag("https://tamnhinrong.org/tnr-9-hinh-anh-dep-ve-bien.jpg", alt: "Rails logo", width: "200px"),
 "https://rubyonrails.org/" %>
 <% end %>
+
+<script type="text/javascript">
+	$('.comment_content').on('presskey', function(event){
+		var micropost_id = $(this).data('id');
+		if (event.which == 13){	
+			$('#post-comment'+micropost_id).click()
+		}
+	})
+</script>

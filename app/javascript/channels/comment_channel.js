@@ -12,7 +12,7 @@ consumer.subscriptions.create("CommentChannel", {
   received(data) {
   	debugger
   	var micropost_id = data.micropost_id;
-  	$('#append-comment'+micropost_id).append('<p style = "padding-left:50px">'+'<b>'+data.username+'</b>:'+data.content+'</p>')
+  	$('#append-comment'+micropost_id).append('<p style = "padding-left:50px">'+'<b>'+data.username+'</b>: '+data.content+'</p>')
   	// Called when there's incoming data on the websocket for this channel
   }
 });
