@@ -122,7 +122,6 @@ Rails.application.configure do
   :domain => 'heroku.com',
   :enable_starttls_auto => true
   }
-  config.action_cable.url = "wss://lehiep-sample-app.herokuapp.com/cable" 
   config.action_cable.allowed_request_origins = ['https://lehiep-sample-app.herokuapp.com', 'http://lehiep-sample-app.herokuapp.com']
   config.serve_static_assets = true
 

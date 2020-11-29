@@ -53,7 +53,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
-
+gem 'bullet', group: 'development'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
@@ -65,4 +65,5 @@ gem 'image_processing'
 gem 'mini_magick'
 gem 'redis'
 gem 'sidekiq'
+gem 'faker'
 
