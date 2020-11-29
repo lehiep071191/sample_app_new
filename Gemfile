@@ -63,4 +63,6 @@ gem 'bootstrap-will_paginate'
 gem 'active_storage_validations'
 gem 'image_processing'
 gem 'mini_magick'
+gem 'redis'
+gem 'sidekiq'
 

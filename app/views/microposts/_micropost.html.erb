@@ -22,9 +22,9 @@
 		<% end %>
 	</span>
 	<span>
-		<input type = "text" name = "comment[content]" class = "form-control" id = "comment-content<%= micropost.id %>">
+		<input type = "text" name = "comment[content]" class = "comment_content form-control" id = "comment-content<%= micropost.id %>" data-id = "<%= micropost.id %>">
 		<input type = "hidden" name = "comment[user]" class = "form-control" id = "comment-user<%= micropost.id %>" value = "<%= current_user.id %>">
-		<button class = "btn-primary post-comment" data-id = "<%= micropost.id %>"> Comment</button>
+		<button class = "btn-primary post-comment" data-id = "<%= micropost.id %>" id = "post-comment<%= micropost.id %>"> Comment</button>
 	</span>
 </li>
 
