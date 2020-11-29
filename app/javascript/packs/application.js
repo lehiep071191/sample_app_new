@@ -9,7 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 
-import "packs/micropost.js"
+import "packs/micropost.js";
+import "packs/comment.js";
 
 
 
